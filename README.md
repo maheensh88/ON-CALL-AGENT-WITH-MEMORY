@@ -371,7 +371,7 @@ The table below shows the exact results recorded during live evaluation across 2
 
 - **Structured Output**: LLM responses are strictly validated against Pydantic schemas (`root_cause`, `reasoning`, `suggested_fix`, `confidence`, `cited_memories`).
 - **Retries & Multi-Model Fallback**: Up to 3 attempts with exponential backoff on `openai/gpt-oss-120b`, then automatic failover to `qwen/qwen3-32b`, then a clearly labeled safe default response. The triage endpoint never crashes.
-- **Graceful Hindsight Fallback**: If Hindsight times out or is unreachable, the error is caught, logged, and surfaced in the response `warnings` array, allowing triage to continue without memory.
+- **Graceful Hindsight Fallback**: If Hindsight times out or is unreachable, the error is caught, logged, and surfaced in the response `warnings` array, allowing it triage to continue without memory.
 - **Strict Timeouts**: Every network call to Groq and Hindsight is guarded by explicit timeouts.
 
 ---
